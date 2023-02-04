@@ -1,0 +1,29 @@
+.hamburger {
+    display: none;
+    position: fixed;
+}
+
+.search {
+    position: absolute;
+    right: -10px;
+    width: 250px;
+    top: -20px;
+
+}
+
+.top-header {
+    position: absolute;
+    left: 0;
+}
+
+.header-menu ul {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul li a{
+    width: 250px;
+}

@@ -1,0 +1,6 @@
+@import url(../styles/globals.css);
+@import url(../styles/index.css);
+
+
+@import "../styles/desktop.css" screen and (min-width: 1000px);
+@import "../styles/index_desktop.css" screen and (min-width: 1000px);
