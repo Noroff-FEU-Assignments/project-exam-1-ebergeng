@@ -8,6 +8,7 @@ let pos = 0
 
 const baseUrl = "https://myflashcard.org/wp-json/";
 const postUrl = "wp/v2/posts"
+const commentUrl = "wp/v2/comments"
 async function apiCall() {
     try {
         let respons = await fetch(baseUrl + postUrl);
@@ -15,7 +16,9 @@ async function apiCall() {
         
         data.forEach(element => {
             console.log(element)
-            generate_posts(element)         
+            
+            generate_posts(element)
+            
         });
     }
     catch(err) {
@@ -36,6 +39,7 @@ async function apiCall() {
 
     
 }
+
 
 function generate_posts(data) {
     let post = {}
@@ -136,13 +140,27 @@ function updatePage_desktop() {
             caruselContent.innerHTML += `<div class="text-holder ${className}">
                                     ${headline}
                                     <div class="img-holder"><img src="${posts[pos + i - 1].img}" alt=""></div>
-                                    ${posts[pos + i - 1].sum}</p>
-                                    <p class="date">Posted: ${posts[pos + i - 1].date}</p>
+                                    ${posts[pos + i - 1].sum + `<p class="read-more">Read more..</p>`}
+                                    
+                                    <div class="post-info">
+                                        <p class="date">Posted: ${posts[pos + i - 1].date}</p>
+                                        <div class="comments">
+                                            <img src="../images/commentv2.png" alt="icon for comments">
+                                            <div id="${posts[pos + i - 1].id}" class="numOfComments">
+                                                <div class="loading"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>`
+                                
         }
         catch(err) {
             caruselContent.innerHTML += `<div class="${className}" style="width:0;"></div>`
         }
+        let allCom = document.querySelectorAll(".numOfComments")
+        allCom.forEach(e => {
+            comments(e)
+        })
     }
 
     let old = document.querySelector(".old");
@@ -153,7 +171,7 @@ function updatePage_desktop() {
 
     let current = document.querySelector(".current");
     current.addEventListener("click", function() {
-        console.log("you clicked me")
+        window.location.assign(`selected_post.html?id=${posts[pos].id}`)
     })
     let next = document.querySelector(".next");
     next.addEventListener("click", function() {
@@ -183,5 +201,18 @@ function check_screen_size(x) {
 }
 
 
+async function comments(element) {
+    let postId = `?post=${element.id}`
+    
+    try {
+        let respons = await fetch(baseUrl + commentUrl + postId);
+        let data = await respons.json()
+        let len = data.length
+        element.innerHTML = len
 
+    }
+    catch(err) {
+        console.log(err)
+    }
+}
 apiCall()
