@@ -3,6 +3,11 @@ main {
     width: 100%;
 }
 
+h1 {
+    color: #5f5d5d;
+    padding: 25px;
+}
+
 .img-holder {
     position: relative;
     display: flex;
@@ -20,15 +25,8 @@ main {
 .wrapper {
     box-sizing: border-box;
     margin: auto;
-    margin-top: 25px;
     display: grid;
     gap: 10px;
-}
-
-.post-wrapp {
-    display: grid;
-    text-decoration: none;
-
 }
 
 .filter {
@@ -42,26 +40,35 @@ main {
     top: 0;
 }
 
-.text-holder {
+.post-wrapper {
     position: relative;
     box-sizing: border-box;
-    height: 300px;
     background-color: white;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.175);
     margin: 0px 5px;
     color: #5f5d5d;
 }
 
-.text-holder p {
+.post-wrapper:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.623);
+}
+
+.post-wrapper p {
     margin: 10px;
 }
 
-.text-holder h2, .text-holder h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
+.post-wrapper h2, .post-wrapper h3 {
+    text-align: center;
+    padding: 20px;
+    margin: 0;
 }
+
+.next .read-more, .old .read-more {
+    display: none;
+}
+
+
 
 .summery {
     min-height: 200px;
