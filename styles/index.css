@@ -4,7 +4,6 @@ main {
 }
 
 h1 {
-    color: #5f5d5d;
     padding: 25px;
 }
 
@@ -102,3 +101,6 @@ h1 {
     font-family: griffon;
 }
 
+.more-posts {
+    display: none;
+}

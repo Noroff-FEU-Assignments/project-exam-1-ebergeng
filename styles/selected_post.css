@@ -69,3 +69,30 @@ p {
     margin: 0;
     margin-left: 50px;
 }
+
+.comment-form {
+    display: grid;
+    gap: 10px;
+    
+}
+
+#name, #email {
+    height: 40px;
+    font-family: griffon;
+    font-size: larger;
+}
+
+form textarea {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-family: merri;
+    
+}
+
+.sendt-msg {
+    display: none;
+}
+
+.sub-button {
+    display: grid;
+}

@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>All posts</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="/styles/selected_post.css">
+    <link rel="stylesheet" href="styles/all_posts.css">
 </head>
 <body>
     <header>
         <div class="header-img">
-            <img src="/images/berrels_two.jpg" alt="low light photography of pile of barrels">
+            <img src="/images/vinflaskerv2.jpg" alt="Image of multiple bottles of wine">
         </div>
         <div class="header-menu">
             <div class="top-header">
@@ -34,27 +34,12 @@
 
     </header>
     <main>
+        <h1>All Posts</h1>
         <div class="wrapper">
             <div class="loading big_load"></div>
         </div>
-        <div class="comments-wrap">
-        </div>
-        <form class="comment-form" action="">
-            <h3>Leave a comment:</h3>
-            <label for="text-area" class="text-label">Comment *</label>
-            <textarea name="text-area" id="text-area" cols="" rows="10"></textarea>
-            <label for="name" class="name-label">Name *</label>
-            <input type="text" name="name" id="name">
-            <label for="email" class="email-label">Email *</label>
-            <input type="text" name="email" id="email">
-            <div class="sub-button">
-                <p class="sendt-msg">Thank you for your comment.</p>
-                <button class="cta">Publish Comment</button>
-              </div>
-        </form>
     </main>
     <script src="/scripts/global.js"></script>
-    <script src="./scripts/selected_post.js"></script>
-    <script src="./scripts/comment.js"></script>
+    <script type="module" src="/scripts/all_posts.js"></script>
 </body>
 </html>

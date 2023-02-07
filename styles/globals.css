@@ -18,6 +18,15 @@ body {
 
 p {
     font-family: merri;
+    color: #444444;
+}
+
+h1 {
+    color: black;
+}
+
+h2, h3, label {
+    color: #444444;
 }
 
 main {
@@ -161,6 +170,7 @@ p {
     margin: auto;
     text-decoration: underline;
     background-color: white;
+    color: #444444;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.623);
     border: none;
 }
