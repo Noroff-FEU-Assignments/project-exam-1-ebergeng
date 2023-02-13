@@ -1,8 +1,11 @@
 import  { api_call, comments_amount, generate_posts} from "./functions.js"
 
+const search = document.querySelector("#searchInput");
+
 const wrapper = document.querySelector(".wrapper");
 const bigLoader = document.querySelector(".big_load");
 const posts = []
+let displayedPost = []; //a list where i store the posts that are being displayed
 
 
 async function gett_all_posts() {
@@ -18,28 +21,35 @@ async function gett_all_posts() {
         console.log(err)
         wrapper.innerHTML = "Looks like there was a problem on our side, pleas try again later"
     }
-    
 }
 
 function add_post_to_page() {
-    bigLoader.style.display = "none"
+    displayedPost = []
     posts.forEach(post => {
-        let html = `<div class="post-wrapper">
-                        <h2>${post.title}</h2>
-                        <div class="img-holder"><img src="${post.img}" alt=""></div>
-                        ${post.sum +`<p class="read-more">Read more..</p>`}
-                        
-                        <div class="post-info">
-                            <p class="date">Posted: ${post.date}</p>
-                            <div class="comments">
-                                <img src="../images/commentv2.png" alt="icon for comments">
-                                <div id="${post.id}" class="numOfComments">
-                                    <div class="loading"></div>
+        displayedPost.push(post)
+    })
+    bigLoader.style.display = "none"
+    wrapper.innerHTML = ""
+    displayedPost.forEach(post => {
+        if(post.display) {
+            let html = `<div class="post-wrapper current" id="${post.id}">
+                            <h2>${post.title}</h2>
+                            <div class="img-holder"><img src="${post.img}" alt=""></div>
+                            ${post.sum +`<p class="read-more">Read more..</p>`}
+                            
+                            <div class="post-info">
+                                <p class="date">Posted: ${post.date}</p>
+                                <div class="comments">
+                                    <img src="../images/commentv2.png" alt="icon for comments">
+                                    <div id="${post.id}" class="numOfComments">
+                                        <div class="loading"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>`;
-    wrapper.innerHTML += html
+                        </div>`;
+            wrapper.innerHTML += html
+        }
+
     })
 
     let allCom = document.querySelectorAll(".numOfComments");
@@ -48,6 +58,29 @@ function add_post_to_page() {
         element.innerHTML = numberOfComment
     })
 
+    let current = document.querySelectorAll(".current");
+    current.forEach(element => {
+        element.addEventListener("click", function() {
+            window.location.assign(`selected_post.html?id=${element.id}`);
+        })
+    })
 }
+
+search.addEventListener("input", function() {
+    let searchWord = this.value.toLowerCase() 
+    posts.forEach(post => {
+        let title = post.title.toLowerCase()
+        if(title.includes(searchWord)) {
+           post.display = true
+        }
+        else {
+            post.display = false
+        }
+    })
+
+    add_post_to_page()
+})
+
+
 
 gett_all_posts()

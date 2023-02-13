@@ -11,7 +11,7 @@ hamburger.addEventListener("click", function() {
 
     }
     else {
-        header.style.height = "60vh"
+        header.style.height = "40vh"
         openMenu = true;
         hamburger.innerHTML = `<img src="/images/close_haburger_icon.png" alt="icon for close haborgermenu"></img>`
     }

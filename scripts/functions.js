@@ -20,6 +20,7 @@ export function generate_posts(data) {
     post.id = data.id;
     post.img = data.yoast_head_json.og_image[0].url;
     post.title = data.title.rendered;
+    post.display = true
     let sum = "";
     for(let i = 0; i < 150; i++) {
         sum += data.excerpt.rendered[i];

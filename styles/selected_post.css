@@ -80,12 +80,14 @@ p {
     height: 40px;
     font-family: griffon;
     font-size: larger;
+    outline-color: #0ADD00;
 }
 
 form textarea {
     margin-bottom: 20px;
     font-size: 18px;
     font-family: merri;
+    outline-color: #0ADD00;
     
 }
 

@@ -84,12 +84,5 @@ function generate_comments (comment) {
                 </div>`
     commentWrap.innerHTML += HTML    
 }
-
-
-
-
-
-
-
 apiCall()
 comments()
