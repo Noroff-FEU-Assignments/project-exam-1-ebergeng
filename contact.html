@@ -23,7 +23,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html">About Me</a></li>
                 <li><a href="all_posts.html">All Posts</a></li>
-                <li><a href="index.html">Contact</a></li>
+                <li><a href="index.html" id="active">Contact</a></li>
             </ul>   
         </div>
 
@@ -32,21 +32,26 @@
         <h1>Cantact</h1>
         <p>Any questen about my blog or just looking for a winechat, dont hassietate to contact me here.</p>
         <div class="wrapper">
-            <form action="">
-                <div>
-                    <label for="name">Full Name</label>
-                    <input type="text" name="name">
-
-                    <label for="email">Email</label>
-                    <input type="text" name="email">
+            <div class="msg-box">
+                <div class="error-msg">Inncorrect inputvalue, check red label</div>
+                <div class="sendt-msg">Message sendt, I will respond as soon as pasible.</div>
+            </div>
+            <form action="" class="contact-form">
+                <div class="name-email-box">
+                    <div>                    
+                        <label for="name" class="name-label">Full Name</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div>
+                        <label for="email" class="email-label">Email</label>
+                        <input type="text" name="email" id="email">   
+                    </div>
                 </div>
-
-
-                <label for="subject">Subject</label>
-                <input type="text" name="subject">
+                <label for="subject" class="subject-label">Subject</label>
+                <input type="text" name="subject" id="subject">
                 
-                <label for="text-area">Your massage here..</label>
-                <textarea name="text-area" id="" cols="30" rows="10"></textarea>
+                <label for="text-area" class="text-label">Your massage here..</label>
+                <textarea name="text-area" id="text-area" cols="30" rows="10"></textarea>
 
                 <input type="submit" class="cta">
             </form>
@@ -56,5 +61,6 @@
         </div>
     </main>
     <script src="/scripts/global.js"></script>
+    <script type="module" src="/scripts/contact.js"></script>
 </body>
 </html>

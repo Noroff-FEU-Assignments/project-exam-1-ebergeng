@@ -1,8 +1,79 @@
-form {
+.wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
     display: grid;
+    justify-items: center;
 }
 
-form div {
-    display: grid;
+.msg-box div {
+    height: fit-content;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: 25px;
+}
+
+.sendt-msg {
+    display: none;
+    background-color: #0bdd0044;
+    border: 2px solid #0bdd00;
+    text-align: center;
     
 }
+
+.error-msg {
+    display: none;
+    background-color: #dd000044;
+    border: 2px solid #dd0000;
+    text-align: center
+}
+
+form {
+    display: grid;
+    margin-top: 55px;
+    width: 100%;
+}
+
+form input {
+    height: 30px;
+    margin-bottom: 10px;
+    outline: none;
+
+}
+
+textarea {
+    outline: none;
+    margin-bottom: 25px;
+}
+ input:focus, textarea:focus {
+    border: 2px solid #0ADD00;
+
+ }
+
+ form div {
+    display: grid;
+ }
+
+@media (min-width: 900px) {
+
+    .name-email-box {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+    }
+
+    form div div {
+        display: grid;
+        gap: 10px;
+
+    }
+}
+
+
+
+
+
+
+

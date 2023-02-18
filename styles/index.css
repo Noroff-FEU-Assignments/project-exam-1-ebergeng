@@ -104,3 +104,7 @@ h1 {
 .more-posts {
     display: none;
 }
+
+.left-arrow, .right-arrow {
+    display: none;
+}

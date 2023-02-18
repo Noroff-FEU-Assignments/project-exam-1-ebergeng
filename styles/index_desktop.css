@@ -22,14 +22,14 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
-
+    grid-template-columns: auto 1fr auto;
+    padding: 55px;
 }
 
 .text-holder {
     display: grid;
     width: 400px;
-    height: 60%;
+    height: 50%;
     min-height: 400px;
     box-sizing: border-box;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.623);
@@ -40,9 +40,8 @@
 }
 
 .old, .next {
-    
     height: 45%;
-    width: 300px;
+    width: 250px;
     min-height: 300px;
 }
 
@@ -57,4 +56,32 @@
 
 .old .img-holder, .next .img-holder {
     height: 100px;
+}
+
+.left-arrow, .right-arrow {
+    position: absolute;
+    height: 56px;
+    width: 52px;
+    background-image: url(../images/right-arrow-gray.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+
+.right-arrow {
+    right: 0;
+    bottom: 50%;
+}
+
+.left-arrow {
+    rotate: 180deg;
+    left: 0;
+    bottom: 50%;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    opacity: 1;
+    cursor: pointer;
 }

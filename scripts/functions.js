@@ -50,3 +50,50 @@ export async function comments_amount(element) {
         console.log(err);
     }
 }
+
+
+export function display_error(label) {
+    label.style.color = "red"
+    //errorMsg.style.display = "inline-block"
+}
+
+export function correct(label) {
+    label.style.color = "#444444"
+}
+
+
+
+export function check_lenght(value, minLenght, maxLenght = 100) {
+    if(value.trim().length >= minLenght && value.trim().length <= maxLenght) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+/* check if hole string is str */
+export function is_string(value) {
+    for(let i = 0; i < value.length; i++){
+        let num = parseInt(value[i])
+        if(Number.isInteger(num)) {
+            return false
+        }
+        else {
+            continue
+    }
+    }
+    return true
+}
+
+export function check_validateion_list(list) {
+    return list.every(function(index) {
+        return index
+    });
+  }
+
+export function check_email(email) {
+    const regEx = /\S+@\S+\.\S+/;
+    const pM = regEx.test(email);
+    return pM;
+}

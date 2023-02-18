@@ -8,7 +8,8 @@ const search = document.querySelector("#searchInput");
 const loader = document.querySelector(".big_load");
 const carusel = document.querySelector(".carusel");
 const caruselContent = document.querySelector(".carusel-content");
-
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
 
 
 
@@ -51,13 +52,32 @@ async function get_all_posts() {
 
 //function that add posts to the display
 function add_post_to_page() {
+    if(!mobile) {
+        caruselContent.innerHTML = "";
+    }
     displayedPost = []
+
+
+
     //each post hava ether display = true of false, if its false it will not ho in the list for displayed posts
     posts.forEach(post => {
         if(post.display) {
             displayedPost.push(post)
         }
     })
+
+    if(!mobile) {
+        if(pos === 0){
+            leftArrow.style.display = "none"
+        }
+        else if(pos === displayedPost.length - 1) {
+            rightArrow.style.display = "none"
+        }
+        else {
+            leftArrow.style.display = "inline-block"
+            rightArrow.style.display = "inline-block"
+        }
+    }
 
     morePosts.style.display = "block"
     let className;
@@ -132,7 +152,7 @@ function add_post_to_page() {
                                 
         }
         catch(err) {
-            caruselContent.innerHTML += `<div class="${className}" style="width:0;"></div>`;
+            caruselContent.innerHTML += `<div class="${className}"></div>`;
         }
 
         //gets the amount of comments, diplayed in the right bottom corner of the post
@@ -176,6 +196,18 @@ function add_post_to_page() {
 
   
 }
+
+leftArrow.addEventListener("click", function() {
+    pos -= 1 
+    add_post_to_page()
+    console.log(pos)
+})
+
+rightArrow.addEventListener("click", function() {
+    pos += 1 
+    add_post_to_page()
+    console.log(pos)
+})
 
 
 //function that will reload the page
