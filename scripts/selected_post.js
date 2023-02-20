@@ -10,7 +10,7 @@ const headline = document.querySelector(".headline");
 const postDate = document.querySelector(".date");
 const postContent = document.querySelector(".post-content");
 const siteName = document.querySelector(".site-name");
-
+const siteTitle = document.querySelector("title")
 
 const baseUrl = "https://myflashcard.org/wp-json/";
 const postUrl = "wp/v2/posts"
@@ -27,6 +27,7 @@ async function apiCall() {
         postDate.innerHTML = `Posted: ${data.date.slice(0, 10)}`
         postContent.innerHTML = data.content.rendered
         siteName.innerHTML = data.title.rendered
+        siteTitle.innerHTML = data.title.rendered
         console.log(data.content.rendered)
     }
     catch(err) {

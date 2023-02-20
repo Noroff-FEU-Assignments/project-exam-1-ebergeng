@@ -17,8 +17,6 @@
 }
 
 .post-wrapper {
-    display: grid;
-    justify-content: space-between;
     width: 270px;
     height: 410px;
 }

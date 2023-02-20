@@ -3,6 +3,9 @@
     box-sizing: border-box;
     padding: 10px;
     display: grid;
+    min-height: 50vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile {
