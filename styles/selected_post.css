@@ -1,42 +1,40 @@
-
-main {
+.wrapper {
+    width: 100%;
     box-sizing: border-box;
     padding: 10px;
-    gap: 10px;
 }
 
-h1 {
-    padding: 25px 5px;
+main {
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-h2{
-    color: #5f5d5d;
-    margin: 0;
-    padding: 5px 5px 0px;
-}
-p {
-    margin: 0;
-}
-
-.wrapper {
-    width: auto;
-}
-
-.wrapper figure {
+.post-content {
     width: 100%;
-    margin: 0;
-
+    max-width: 500px;
+    margin: auto;
 }
 
-.wrapper:nth-child img {
+.post-content figure:first-of-type {
+    display: none;
+}
+
+.post-content figure {
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-.wrapper figure img {
-    max-width: 1000px;
+.post-content figure img {
+    width: 100%;
     height: auto;
+    
 }
 
+.post-content p:first-of-type:first-letter, .post-content h2 + p:first-letter, .post-content h2 + figure + p:first-letter{
+    font-size: 18px;
+    font-weight: bold;
+  }
 
 
 .comments-wrap {
@@ -53,6 +51,8 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    max-width: 700px;
+    margin: auto;
 }
 
 .profile {
@@ -77,6 +77,11 @@ p {
 .comment-form {
     display: grid;
     gap: 10px;
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 10px;
     
 }
 
@@ -85,6 +90,7 @@ p {
     font-family: griffon;
     font-size: larger;
     outline-color: #0ADD00;
+    width: 100%;
 }
 
 form textarea {
@@ -92,6 +98,7 @@ form textarea {
     font-size: 18px;
     font-family: merri;
     outline-color: #0ADD00;
+    width: 100%;
     
 }
 
@@ -101,4 +108,16 @@ form textarea {
 
 .sub-button {
     display: grid;
+}
+
+.carusel {
+    min-height: 0;
+    height: 30vh;
+}
+
+@media (min-width: 900px) {
+    .carusel {
+        min-height: 550px;
+        height: 30vh;
+    }
 }

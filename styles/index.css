@@ -41,7 +41,6 @@ h1 {
 
 .post-wrapper {
     position: relative;
-    box-sizing: border-box;
     background-color: white;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.175);
     margin: 0px 5px;

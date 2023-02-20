@@ -1,7 +1,15 @@
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const queryId = params.get("id")
+
+
+const loader = document.querySelector(".big_load")
 const wrapper = document.querySelector(".wrapper");
+const carusel = document.querySelector(".carusel");
+const headline = document.querySelector(".headline");
+const postDate = document.querySelector(".date");
+const postContent = document.querySelector(".post-content");
+const siteName = document.querySelector(".site-name");
 
 
 const baseUrl = "https://myflashcard.org/wp-json/";
@@ -13,10 +21,13 @@ async function apiCall() {
     try {
         let respons = await fetch(url);
         let data = await respons.json();
-        wrapper.innerHTML = ""
-        wrapper.innerHTML += `<h1>${data.title.rendered}</h1>`
-        wrapper.innerHTML += data.content.rendered
-        console.log(data)
+        loader.style.display = "none"
+        carusel.style.backgroundImage = `url(${data.yoast_head_json.og_image[0].url})`
+        headline.innerHTML = data.title.rendered
+        postDate.innerHTML = `Posted: ${data.date.slice(0, 10)}`
+        postContent.innerHTML = data.content.rendered
+        siteName.innerHTML = data.title.rendered
+        console.log(data.content.rendered)
     }
     catch(err) {
         console.log(err)

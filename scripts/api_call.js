@@ -69,9 +69,11 @@ function add_post_to_page() {
     if(!mobile) {
         if(pos === 0){
             leftArrow.style.display = "none"
+            rightArrow.style.display = "inline-block"
         }
         else if(pos === displayedPost.length - 1) {
             rightArrow.style.display = "none"
+            
         }
         else {
             leftArrow.style.display = "inline-block"
@@ -82,6 +84,7 @@ function add_post_to_page() {
     morePosts.style.display = "block"
     let className;
     let headline;
+    let sum;
 
     if(!mobile && displayedPost.length > 0){
         carusel.style.backgroundImage = `url(${displayedPost[pos].img})`;
@@ -95,12 +98,14 @@ function add_post_to_page() {
 
     // for loop thats display 3 of the posts in the list, one that are in focus, one older and one new post. exept when u first enter the site. there is only 2 post, one in focues and one older post
     for(let i = 0; i < 3; i++){
+        /*
         try {
             if(!mobile) {//if its not mobile screen the posts have different classnames
                 if(i===0) {
                     className = "next";
                     try {
                         headline = `<h3>${displayedPost[pos + i - 1].title}</h3>`;
+                        sum = `${displayedPost[pos + i - 1].sum}`
                     }
 
                     catch(err) {
@@ -110,12 +115,14 @@ function add_post_to_page() {
                 else if(i===1){
                     className = "current"
                     headline = `<h2>${displayedPost[pos + i - 1].title}</h2>`;
+                    sum = `${displayedPost[pos + i - 1].sum +`<p class="read-more">Read more..</p>`}`
                 }
 
                 else{
                     className = "old"
                     try {
                         headline = `<h3>${displayedPost[pos + i - 1].title}</h3>`;
+                        sum = `${displayedPost[pos + i - 1].sum}`
                     }
                     catch(err) {
                     }//catch is empty because i dont want anything to happend if there is an error      
@@ -131,18 +138,20 @@ function add_post_to_page() {
         catch(err) { //remove the botten to display more posts if you are at the end of the list of posts
             morePosts.style.display = "none";
         }
+        */
 
         try{ //add the html for each posts
-            caruselContent.innerHTML += `<div class="post-wrapper ${className}" id="${displayedPost[pos + i - 1].id}">
-                                    ${headline}
-                                    <div class="img-holder"><img src="${displayedPost[pos + i - 1].img}" alt=""></div>
-                                    ${displayedPost[pos + i - 1].sum +`<p class="read-more">Read more..</p>`}
-                                    
+            caruselContent.innerHTML += `<div class="post-wrapper current" id="${displayedPost[pos + i].id}" data-id="${pos + i}">
+                                    <h2>${displayedPost[pos + i].title}</h2>
+                                    <div class="img-holder"><img src="${displayedPost[pos + i].img}" alt=""></div>
+                                    ${displayedPost[pos + i].sum}
+                                    <p class="read-more">Read more..</p>
                                     <div class="post-info">
-                                        <p class="date">Posted: ${displayedPost[pos + i - 1].date}</p>
+                                        <p class="date">Posted: ${displayedPost[pos + i].date}</p>
+                                        
                                         <div class="comments">
                                             <img src="../images/commentv2.png" alt="icon for comments">
-                                            <div id="${displayedPost[pos + i - 1].id}" class="numOfComments">
+                                            <div id="${displayedPost[pos + i].id}" class="numOfComments">
                                                 <div class="loading"></div>
                                             </div>
                                         </div>
@@ -152,7 +161,8 @@ function add_post_to_page() {
                                 
         }
         catch(err) {
-            caruselContent.innerHTML += `<div class="${className}"></div>`;
+            rightArrow.style.display = "none"
+            
         }
 
         //gets the amount of comments, diplayed in the right bottom corner of the post
@@ -161,52 +171,47 @@ function add_post_to_page() {
             let numberOfComment = await comments_amount(element);
             element.innerHTML = numberOfComment
         })
+
+
     }
 
-    if(!mobile) {// creates a next and priv butten on the posts with classname old and next
-        let old = document.querySelector(".next");
-        old.addEventListener("click", function() {
-            pos -= 1;
-            caruselContent.innerHTML = "";
-            add_post_to_page();
-        })
-        let next = document.querySelector(".old");
-        next.addEventListener("click", function() {
-            pos += 1;
-            caruselContent.innerHTML = "";
-            add_post_to_page();
-        })
-    }
 
-    if(mobile){//on mobile screen, all the post are links to there own page witch will display the full post
-        let current = document.querySelectorAll(".current");
-        current.forEach(element => {
-            element.addEventListener("click", function() {
-                window.location.assign(`selected_post.html?id=${element.id}`);
+
+
+
+   //on mobile screen, all the post are links to there own page witch will display the full post
+    let current = document.querySelectorAll(".current");
+    current.forEach(element => {
+        element.addEventListener("click", function() {
+            window.location.assign(`selected_post.html?id=${element.id}`);
+        })
+        if(!mobile) {
+            element.addEventListener("mouseover", function() {
+                carusel.style.backgroundImage = `url(${displayedPost[this.dataset["id"]].img})`;
+                current.forEach(element => {
+                    element.className = "post-wrapper current"
+                })
+                this.className = "post-wrapper current focus"
             })
-        })
-    }
+        }
 
-    else {//on desktop view only the one in focus, and with classname current will link to the full post
-        let current = document.querySelector(".current");
-        current.addEventListener("click", function() {
-            window.location.assign(`selected_post.html?id=${this.id}`);
-        })
-    }
+    })
+
+
+
+
 
   
 }
 
 leftArrow.addEventListener("click", function() {
-    pos -= 1 
+    pos -= 3 
     add_post_to_page()
-    console.log(pos)
 })
 
 rightArrow.addEventListener("click", function() {
-    pos += 1 
+    pos += 3
     add_post_to_page()
-    console.log(pos)
 })
 
 

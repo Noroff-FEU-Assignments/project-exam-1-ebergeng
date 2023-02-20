@@ -31,6 +31,11 @@ h2, h3, label {
     color: #444444;
 }
 
+h4 {
+    color: #929292;
+    font-size: 16px;
+}
+
 main {
     max-width: 1000px;
     margin: 50px auto;
@@ -49,7 +54,14 @@ main {
 
 .carusel {
     min-height: 550px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
+    background-position: center;
 }
 
 .header-img img {
@@ -260,4 +272,93 @@ footer {
     background-color: #212121;
     min-height: 150px;
     margin-top: 25px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+footer div {
+    padding: 10px;
+}
+
+.foot-wrap {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.shortcuts ul li {
+    display: block;
+    text-decoration: none;
+}
+
+.shortcuts ul {
+    padding: 0;
+}
+
+
+.shortcuts a {
+    text-decoration: none;
+    color: #929292;
+    font-size: 14px;
+}
+
+.shortcuts a:hover {
+    text-decoration: underline;
+}
+
+.about p {
+    max-width: 200px;
+    color: #929292;
+}
+
+.sosial-icons {
+    display: flex;
+    align-items: end;
+}
+
+.sosial-icons ul li {
+    display: inline-block;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+}
+
+.sosial-icons ul {
+    padding: 0;
+}
+
+.sosial-icons img {
+    height: 50%;
+}
+
+.site-guide {
+    position: absolute;
+    left: 0px;
+    padding: 10px;
+    font-size: 10px;
+}
+
+.site-guide a {
+    text-decoration: none;
+}
+
+.intro {
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.intro h1 {
+    text-align: left;
+    padding: 0;
+}
+
+.intro p {
+    font-size: 10px;
+    margin: 0;
 }

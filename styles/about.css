@@ -1,0 +1,36 @@
+.wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: grid;
+}
+
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.profile-text p{
+    font-family: griffon;
+}
+
+.profile-img {
+    background-image: url(../images/icons/user.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 150px;
+}
+
+.about-me {
+    margin: auto;
+    max-width: 500px;
+
+}
+
+@media screen and (min-width: 900px) {
+    .wrapper {
+        grid-template-columns: 2fr 1fr;
+    }
+}

@@ -7,12 +7,5 @@
 
 .post-wrapper {
     max-width: 310px;
-    height: 430px;
+    height: 410px;
 }
-
-.post-info {
-    position: absolute;
-    bottom: 0;
-    width: 95%;
-}
-
