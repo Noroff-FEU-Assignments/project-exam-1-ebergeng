@@ -291,6 +291,13 @@ footer div {
     width: 100%;
     flex-wrap: wrap;
     box-sizing: border-box;
+    text-align: center;
+}
+
+@media screen and (max-width: 390px) {
+    .foot-wrap {
+        justify-content: center;
+    }
 }
 
 .shortcuts ul li {
