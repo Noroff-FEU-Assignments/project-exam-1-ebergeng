@@ -104,3 +104,8 @@ main {
 .left-arrow, .right-arrow {
     display: none;
 }
+
+.carusel-content {
+    display: grid;
+    gap: 10px;
+}

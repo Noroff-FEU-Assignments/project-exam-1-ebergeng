@@ -11,6 +11,7 @@ const postDate = document.querySelector(".date");
 const postContent = document.querySelector(".post-content");
 const siteName = document.querySelector(".site-name");
 const siteTitle = document.querySelector("title")
+const commentForm = document.querySelector(".comment-form");
 
 const baseUrl = "https://myflashcard.org/wp-json/";
 const postUrl = "wp/v2/posts"
@@ -28,10 +29,11 @@ async function apiCall() {
         postContent.innerHTML = data.content.rendered
         siteName.innerHTML = data.title.rendered
         siteTitle.innerHTML = data.title.rendered
-        console.log(data.content.rendered)
     }
     catch(err) {
         console.log(err)
+        wrapper.innerHTML = "Looks like there was a problem on our side, pleas try again later"
+        commentForm.innerHTML = ""
     }
 }
 
@@ -59,27 +61,26 @@ async function comments() {
 const commentWrap = document.querySelector(".comments-wrap")
 let commentList = []
 function generate_comments (comment) {
-    console.log(comment)
-    let authorName = comment.author_name
-    let date  = comment.date
+    let authorName = comment.author_name;
+    let date  = comment.date;
     let month;
     let day;
 
     if (date[8] === "0") {
-        day = date[9]
+        day = date[9];
     }
     else {
         day = date[8] + date[9];
     }
 
     if (date[5] === "0") {
-        month = parseInt(date[6] - 1)
+        month = parseInt(date[6] - 1);
     }
     else {
         month = date[5] + date[6];
-        month = parseInt(month - 1)
+        month = parseInt(month - 1);
     }
-    let content = comment.content.rendered
+    let content = comment.content.rendered;
 
     let HTML = `<div class="comments">
                     <div class="profile">
@@ -94,7 +95,7 @@ function generate_comments (comment) {
                     </div>
                     ${content}
                 </div>`
-    commentWrap.innerHTML += HTML    
+    commentWrap.innerHTML += HTML;
 }
-apiCall()
-comments()
+apiCall();
+comments();
