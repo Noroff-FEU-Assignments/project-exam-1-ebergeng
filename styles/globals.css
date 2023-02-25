@@ -39,6 +39,7 @@ h4 {
 main {
     max-width: 1000px;
     margin: 50px auto;
+    min-height: 61vh;
 }
 
 .header-img {

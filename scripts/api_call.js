@@ -211,7 +211,17 @@ leftArrow.addEventListener("click", function() {
 
 rightArrow.addEventListener("click", function() {
     pos += 3
-    add_post_to_page()
+    if(posts.length <= pos) {
+        pos -= 3
+        rightArrow.style.display = "none"
+    }
+    else {
+        add_post_to_page()
+    }
+    
+
+    
+    
 })
 
 

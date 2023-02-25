@@ -1,5 +1,5 @@
 const baseUrl = "https://myflashcard.org/wp-json/";
-const postUrl = "wp/v2/posts";
+const postUrl = "wp/v2/posts?per_page=100";
 const commentUrl = "wp/v2/comments";
 
 export async function api_call() {

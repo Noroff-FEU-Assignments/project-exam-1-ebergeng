@@ -121,3 +121,25 @@ form textarea {
         height: 30vh;
     }
 }
+
+.post-content figure:not(:first-of-type){
+    cursor: pointer;
+}
+
+.focus-img {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.904);
+    z-index: 99;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.focus-img img {
+    width: 100%;
+    max-width: 1200px;
+}

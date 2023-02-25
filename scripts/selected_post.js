@@ -29,6 +29,7 @@ async function apiCall() {
         postContent.innerHTML = data.content.rendered
         siteName.innerHTML = data.title.rendered
         siteTitle.innerHTML = data.title.rendered
+        focus_img()
     }
     catch(err) {
         console.log(err)
@@ -51,6 +52,7 @@ async function comments() {
         data.forEach(comment => {
             generate_comments(comment)
         });
+
 
     }
     catch(err) {
@@ -96,6 +98,32 @@ function generate_comments (comment) {
                     ${content}
                 </div>`
     commentWrap.innerHTML += HTML;
+    
 }
+
+
+
+function focus_img() {
+    const allImg = document.querySelectorAll(".wp-block-image") 
+    allImg.forEach(element => {
+        element.addEventListener("click", function() {
+            if(!element.classList.contains("focus-img")) {
+                element.classList.add("focus-img")
+            }
+            else {
+                element.classList.remove("focus-img")
+            }
+            
+        })
+    })
+}
+
+function remove_overlay() {
+    let overlay = document.querySelector(".focus-img")
+    overlay.addEventListener("click", function() {
+        overlay.classList.remove("focus-img")
+    })
+}
+
 apiCall();
 comments();

@@ -76,30 +76,16 @@ function add_post_to_page() {
     }
 }
 
-search.addEventListener("input", function() {
-    let searchWord = this.value.toLowerCase() ;
-    posts.forEach(post => {
-        let title = post.title.toLowerCase();
-        if(title.includes(searchWord)) {
-           post.display = true;
-        }
-        else {
-            post.display = false;
-        }
-    })
-
-    add_post_to_page();
-})
-
-
 
 morePosts.addEventListener("click", function() {
     try {
         add_post_to_page();
     }
     catch (err) {
-        console.log("no more posts");
+        morePosts.style.display = "none"
     }
 })
+
+
 
 gett_all_posts()
