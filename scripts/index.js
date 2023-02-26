@@ -57,8 +57,6 @@ function add_post_to_page() {
     }
     displayedPost = []
 
-
-
     //each post hava ether display = true of false, if its false it will not ho in the list for displayed posts
     posts.forEach(post => {
         if(post.display) {
@@ -98,47 +96,6 @@ function add_post_to_page() {
 
     // for loop thats display 3 of the posts in the list, one that are in focus, one older and one new post. exept when u first enter the site. there is only 2 post, one in focues and one older post
     for(let i = 0; i < 3; i++){
-        /*
-        try {
-            if(!mobile) {//if its not mobile screen the posts have different classnames
-                if(i===0) {
-                    className = "next";
-                    try {
-                        headline = `<h3>${displayedPost[pos + i - 1].title}</h3>`;
-                        sum = `${displayedPost[pos + i - 1].sum}`
-                    }
-
-                    catch(err) {
-                    }//catch is empty because i dont want anything to happend if there is an error      
-                }
-
-                else if(i===1){
-                    className = "current"
-                    headline = `<h2>${displayedPost[pos + i - 1].title}</h2>`;
-                    sum = `${displayedPost[pos + i - 1].sum +`<p class="read-more">Read more..</p>`}`
-                }
-
-                else{
-                    className = "old"
-                    try {
-                        headline = `<h3>${displayedPost[pos + i - 1].title}</h3>`;
-                        sum = `${displayedPost[pos + i - 1].sum}`
-                    }
-                    catch(err) {
-                    }//catch is empty because i dont want anything to happend if there is an error      
-                }
-            }
-
-            else { //on mobile thay all have same class name
-                headline = `<h2>${displayedPost[pos + i - 1].title}</h2>`;
-                className = "current";
-            }  
-        }
-
-        catch(err) { //remove the botten to display more posts if you are at the end of the list of posts
-            morePosts.style.display = "none";
-        }
-        */
 
         try{ //add the html for each posts
             caruselContent.innerHTML += `<div class="post-wrapper current" id="${displayedPost[pos + i].id}" data-id="${pos + i}">
@@ -175,10 +132,6 @@ function add_post_to_page() {
 
     }
 
-
-
-
-
    //on mobile screen, all the post are links to there own page witch will display the full post
     let current = document.querySelectorAll(".current");
     current.forEach(element => {
@@ -196,12 +149,6 @@ function add_post_to_page() {
         }
 
     })
-
-
-
-
-
-  
 }
 
 leftArrow.addEventListener("click", function() {
@@ -217,13 +164,8 @@ rightArrow.addEventListener("click", function() {
     }
     else {
         add_post_to_page()
-    }
-    
-
-    
-    
+    }  
 })
-
 
 //function that will reload the page
 function check_screen_size() {
@@ -254,7 +196,5 @@ search.addEventListener("input", function() {
     caruselContent.innerHTML = "";
     add_post_to_page();   
 })
-
-
 
 get_all_posts();
