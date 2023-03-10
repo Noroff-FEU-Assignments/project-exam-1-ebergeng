@@ -7,7 +7,7 @@ My Project Exam, first year of front-end deveopment at Noroff
 ## Description
 
 A blogpage built with HTML, CSS, JS and uses wordpress as a headless CMS. It uses a wordpress api call to catch posts from a wordpress DB.
-All the posts in this sites are createt and stord on a wordpress page.
+All the posts in this sites are createt and stored on a wordpress page.
 
 - Blog
 - Wordpress
