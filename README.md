@@ -1,4 +1,4 @@
-# Community Science Museum || Semester-prject 2022
+# Blog || Semester-prject 2022
 
 ![exam](https://user-images.githubusercontent.com/59417456/224290134-b66b4e53-c53a-488f-90db-18bd60073f94.jpg)
 
@@ -6,15 +6,17 @@ My Project Exam, first year of front-end deveopment at Noroff
 
 ## Description
 
-The page had to cater to a very broad target audience, so I have tried to make the page simple and playful for everyone, from young teenagers to the elderly.
+A blogpage built with HTML, CSS, JS and uses wordpress as a headless CMS. It uses a wordpress api call to catch posts from a wordpress DB.
+All the posts in this sites are createt and stord on a wordpress page.
 
-- Webpage
-- Sience museum
+- Blog
+- Wordpress
 
 ## Built With
 
 - HTML
 - CSS
+- JS
 
 ## Getting Started
 
