@@ -25,7 +25,7 @@ All the posts in this sites are createt and stored on a wordpress page.
 1. Clone the repo:
 
 ```bash
-https://github.com/ebergeng/semester_project_v2.git
+https://github.com/Noroff-FEU-Assignments/project-exam-1-ebergeng.git
 ```
 
 ### Running
@@ -33,6 +33,17 @@ https://github.com/ebergeng/semester_project_v2.git
 Run index.html with with live server inn VS Code or just open it in a web-browser.
 
 Or check out the site here: https://resplendent-semifreddo-f584b3.netlify.app/index.html
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Project Exam 1
