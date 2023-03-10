@@ -1,3 +1,38 @@
+# Community Science Museum || Semester-prject 2022
+
+![exam](https://user-images.githubusercontent.com/59417456/224290134-b66b4e53-c53a-488f-90db-18bd60073f94.jpg)
+
+My Project Exam, first year of front-end deveopment at Noroff
+
+## Description
+
+The page had to cater to a very broad target audience, so I have tried to make the page simple and playful for everyone, from young teenagers to the elderly.
+
+- Webpage
+- Sience museum
+
+## Built With
+
+- HTML
+- CSS
+
+## Getting Started
+
+### Installing
+
+1. Clone the repo:
+
+```bash
+https://github.com/ebergeng/semester_project_v2.git
+```
+
+### Running
+
+Run index.html with with live server inn VS Code or just open it in a web-browser.
+
+Or check out the site here: https://resplendent-semifreddo-f584b3.netlify.app/index.html
+
+
 ## Project Exam 1
 
 ## Goal
