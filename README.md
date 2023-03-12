@@ -33,3 +33,5 @@ https://github.com/Noroff-FEU-Assignments/project-exam-1-ebergeng.git
 Run index.html with with live server inn VS Code or just open it in a web-browser.
 
 Or check out the site here: https://resplendent-semifreddo-f584b3.netlify.app/index.html
+
+If you like to use this page your self change the variable in functions.js called baseUrl to "https://YOUR-WORDPRESS-SITE/wp-json/"(replace YOUR-WORDPRESS-SITE with the url for a wordpress that you own.
