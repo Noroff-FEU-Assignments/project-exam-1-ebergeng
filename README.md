@@ -1,4 +1,4 @@
-# Blog || Semester-prject 2022
+# Blog || prject-Exam 2023
 
 ![exam](https://user-images.githubusercontent.com/59417456/224290134-b66b4e53-c53a-488f-90db-18bd60073f94.jpg)
 
