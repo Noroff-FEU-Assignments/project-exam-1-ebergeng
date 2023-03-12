@@ -35,7 +35,7 @@ Run index.html with with live server inn VS Code or just open it in a web-browse
 Or check out the site here: https://resplendent-semifreddo-f584b3.netlify.app/index.html
 
 If you like to use this page your self change the variable in functions.js called baseUrl to "https://YOUR-WORDPRESS-SITE/wp-json/" 
-And the varibal all_posts.js called baseUrl to "https://YOUR-WORDPRESS-SITE/wp-json/wp/v2/posts?per_page=10&"
+And the varibal in all_posts.js called baseUrl to "https://YOUR-WORDPRESS-SITE/wp-json/wp/v2/posts?per_page=10&"
 (replace YOUR-WORDPRESS-SITE with the url for a wordpress that you own.
 
 ## Contributing
